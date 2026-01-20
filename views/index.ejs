@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+
+  <h1><%= title %></h1>
+
+  <form action="/characters" method="post">
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" maxlength="40" required />
+
+    <label for="type">Type</label>
+    <select id="type" name="type" required>
+      <option value="" disabled selected>Select a type</option>
+      <!-- INJECT DROP DOWN OPTIONS -->
+    </select>
+
+    <label for="trait">Trait</label>
+    <select id="trait" name="trait" required>
+      <option value="" disabled selected>Select a trait</option>
+      <!-- INJECT DROP DOWN OPTIONS -->
+    </select>
+
+    <button type="submit">Create Character</button>
+  </form>
+
+  <h2>Characters</h2>
+
+  <% if (characters.length === 0) { %>
+    <p>No characters yet. Create one above.</p>
+  <% } else { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Trait</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% characters.forEach(c => { %>
+          <tr>
+            <td>
+              <a href="/characters/<%= c._id %>"><%= c.name %></a>
+            </td>
+            <td><%= c.type %></td>
+            <td><%= c.trait %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } %>
+
+</body>
+</html>

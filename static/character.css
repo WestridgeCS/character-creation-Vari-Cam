@@ -1,0 +1,14 @@
+body { font-family: system-ui, Arial, sans-serif; margin: 24px; }
+.card { border: 1px solid #ddd; padding: 16px; border-radius: 10px; max-width: 520px; }
+.row { margin: 10px 0; }
+.label { color: #555; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; }
+.value { font-size: 18px; font-weight: 700; }
+a.button {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 12px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #111;
+}
